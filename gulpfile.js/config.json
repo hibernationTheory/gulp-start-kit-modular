@@ -6,6 +6,11 @@
   },
 
   "tasks": {
+    "browserSync": {
+      "server": {
+        "baseDir": ".tmp"
+      }
+    },
     "static": {
       "src": "static",
       "dest": "./"
