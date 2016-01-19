@@ -1,0 +1,14 @@
+{
+  "root": {
+    "src": "./src",
+    "tempDest":"./.tmp",
+    "buildDest":"./build"
+  },
+
+  "tasks": {
+    "static": {
+      "src": "static",
+      "dest": "./"
+    }
+  }
+}
