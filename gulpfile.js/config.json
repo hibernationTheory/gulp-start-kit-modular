@@ -6,6 +6,12 @@
   },
 
   "tasks": {
+    "browserify":{
+      "entries": "./src/js/main.js",
+      "bundleName":"bundle.js",
+      "debug":true,
+      "transform":["babelify"]
+    },
     "browserSync": {
       "server": {
         "baseDir": "build"
@@ -31,10 +37,14 @@
           "bb >= 10"
         ]
       },
+      "extensions": ["sass", "scss", "css"],
       "sass": {
-        
-      },
-      "extensions": ["sass", "scss", "css"]
+      }
+    },
+    "js": {
+      "src": "js",
+      "dest": "js",
+      "extensions": ["js"]
     }
   }
 }
