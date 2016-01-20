@@ -41,6 +41,16 @@
       "sass": {
       }
     },
+    "html": {
+      "src":"./",
+      "dest":"./",
+      "extensions": ["nunjucks", "html"],
+      "nunjucks":{
+        "partials":"markup/partials",
+        "pages":"markup/pages",
+        "data":"data"
+      }
+    },
     "js": {
       "src": "js",
       "dest": "js",
