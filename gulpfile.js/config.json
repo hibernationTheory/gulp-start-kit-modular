@@ -12,7 +12,7 @@
       }
     },
     "static": {
-      "src": "static",
+      "src": "./",
       "dest": "./"
     }
   }
