@@ -1,12 +1,12 @@
 {
-  "name": "gulp-starter",
+  "name": "gulp-start-kit-modular",
   "version": "0.0.1",
-  "description": "a customizable gulp starter kit with common tasks",
+  "description": "A customizable, modular Gulp Start Kit with some frequently used tasks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "engin.a@myplanet.com",
   "license": "ISC",
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
