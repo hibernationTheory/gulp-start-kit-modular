@@ -2,9 +2,9 @@
 
 A configurable, modular Gulp starter kit with common tasks. Comes with Browserify and supports Nunjucks templating. ES2015 and Sass ready. Heavily based on:
 
-- (vigetlabs)[https://github.com/vigetlabs/gulp-starter]
-- (Google Web Starter Kit)[https://github.com/google/web-starter-kit]
-- (nunkucks framework)[https://github.com/travellingprog/nunjucks-framework]
+- [Vigetlabs Gulp Starter](https://github.com/vigetlabs/gulp-starter)
+- [Google Web Starter Kit](https://github.com/google/web-starter-kit)
+- [Nunjucks Framework](https://github.com/travellingprog/nunjucks-framework)
 
 ## Tasks
 
