@@ -1,0 +1,16 @@
+---
+title: Main Navigation
+---
+
+{% extends "layouts/_default.nunjucks" %}
+
+{% block body %}
+<main class="pages">
+    <h1>Main Navigation</h1>
+    <ul>
+        {% for person in people %}
+            <li>{{ person.name }} <em>(age {{ person.age }})</em> {{ options.A }}</li>
+        {% endfor %}
+    </ul>
+</main>
+{% endblock %}

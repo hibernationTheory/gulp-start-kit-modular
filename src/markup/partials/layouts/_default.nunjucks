@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+            {% include "_head.nunjucks" %}
+            <title>Title | {{ frontMatter.title }}</title>
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block header %}
+            {% include "headers/_default.nunjucks" %}
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+
+        {% block footer %}
+            {% include "footers/_default.nunjucks" %}
+        {% endblock %}
+
+        {% block foot %}
+            {% include "_foot.nunjucks" %}
+        {% endblock %}
+    </body>
+</html>
