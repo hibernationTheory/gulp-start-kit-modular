@@ -9,8 +9,7 @@
   "author": "engin.a@myplanet.com",
   "license": "ISC",
   "devDependencies": {
-    "babel-preset-es2015": "^6.3.13",
-    "babelify": "^7.2.0",
+    "babelify": "^6.1.3",
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
     "del": "^2.2.0",

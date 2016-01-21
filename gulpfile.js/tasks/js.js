@@ -19,7 +19,7 @@ var scriptsTask = function() {
       "entries": paths.entries,
       "debug":config.tasks.js.browserify.debug
     })
-    .transform("babelify", {presets: ["es2015"]})
+    .transform("babelify")
     .bundle()
     .pipe(source(config.tasks.js.browserify.bundleName))
     .pipe(gulp.dest(paths.dest))

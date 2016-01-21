@@ -43,10 +43,8 @@ A configurable, modular Gulp starter kit with common tasks. Comes with Browserif
 https://github.com/babel/babelify
 Browserify transform for Babel
 
-#### babel-preset-es2015
-
-https://github.com/babel/babel/tree/master/packages
-Babel preset for all es2015 plugins.
+Using an earlier version (non-plugin based) since babel6 at the time of this writing seems to have performance issues due to dupe dependencies when multiple plugins are used.
+[reddit link describing the issue and solution](https://www.reddit.com/r/javascript/comments/3u7gob/babels_poor_performance_what_im_doing_wrong/cz2z0or)
 
 ### browserify
 
