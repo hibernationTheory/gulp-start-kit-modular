@@ -44,6 +44,7 @@ var htmlTaskServe = function () {
 var htmlTaskBuild = function () {
   var stream = htmlTaskBase();
   return stream
+    .pipe($.htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(paths.buildDest))
     .pipe(browserSync.stream())
 }

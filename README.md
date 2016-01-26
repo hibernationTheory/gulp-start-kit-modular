@@ -95,6 +95,11 @@ Generate a data object from a variety of sources: json, front-matter, database, 
 https://github.com/lmtm/gulp-front-matter
 Extract front-matter header from files
 
+### gulp-htmlmin
+
+https://github.com/jonschlinkert/gulp-htmlmin
+gulp plugin to minify HTML.
+
 ### gulp-load-plugins
 
 https://github.com/jackfranklin/gulp-load-plugins
