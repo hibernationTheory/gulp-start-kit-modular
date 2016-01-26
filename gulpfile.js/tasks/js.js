@@ -5,8 +5,10 @@ var gulp         = require('gulp')
 var babelify     = require('babelify')
 var browserify   = require('browserify')
 var browserSync  = require('browser-sync')
+var buffer       = require('vinyl-buffer')
 var path         = require('path')
 var source       = require('vinyl-source-stream')
+var $            = require('gulp-load-plugins')();
 
 var paths = {
   src: path.join(config.root.src, config.tasks.js.src, '/**/*.{' + config.tasks.js.extensions + '}'),
@@ -35,6 +37,8 @@ var scriptsTaskServe = function() {
 var scriptsTaskBuild = function() {
   var stream = scriptsTaskBase();
   return stream
+    .pipe(buffer())
+    .pipe($.uglify())
     .pipe(gulp.dest(paths.buildDest))
     .pipe(browserSync.stream())
 }

@@ -130,6 +130,13 @@ Allows us to serialize or parallelize given gulp tasks.
 https://github.com/floridoo/gulp-sourcemaps
 Source map support for Gulp.js
 
+### gulp-uglify
+
+https://github.com/terinjokes/gulp-uglify
+Minify files with UglifyJS
+
+Required the installation of vinyl-buffer, since the vinyl stream needed to be transformed into a Buffer before getting fed into the uglify. 
+
 ### require-dir
 
 https://github.com/aseemk/requireDir
@@ -141,6 +148,11 @@ Allows us to require all the files in a directory without explicitly referring t
 
 https://www.npmjs.com/package/require-glob
 Requires multiple modules using glob patterns. Supports exclusions.
+
+### vinyl-buffer
+
+https://github.com/hughsk/vinyl-buffer
+Convert streaming vinyl files to use buffers
 
 ### vinyl-source-stream
 
