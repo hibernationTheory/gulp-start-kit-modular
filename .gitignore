@@ -1,6 +1,6 @@
 .DS_Store
 .sass-cache
-.tmp
+tmp
 build
 Desktop.ini
 node_modules

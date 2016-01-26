@@ -10,11 +10,12 @@ var source       = require('vinyl-source-stream')
 
 var paths = {
   src: path.join(config.root.src, config.tasks.js.src, '/**/*.{' + config.tasks.js.extensions + '}'),
-  dest: path.join(config.root.buildDest, config.tasks.js.dest),
+  buildDest: path.join(config.root.buildDest, config.tasks.js.dest),
+  serveDest: path.join(config.root.serveDest, config.tasks.js.dest),
   entries: path.join(config.root.src, config.tasks.js.src, config.tasks.js.browserify.entries)
 }
 
-var scriptsTask = function() {
+var scriptsTaskBase = function() {
   return browserify({
       "entries": paths.entries,
       "debug":config.tasks.js.browserify.debug
@@ -22,10 +23,26 @@ var scriptsTask = function() {
     .transform("babelify")
     .bundle()
     .pipe(source(config.tasks.js.browserify.bundleName))
-    .pipe(gulp.dest(paths.dest))
+}
+
+var scriptsTaskServe = function() {
+  var stream = scriptsTaskBase();
+  return stream
+    .pipe(gulp.dest(paths.serveDest))
     .pipe(browserSync.stream())
 }
 
-gulp.task('js', scriptsTask)
-module.exports = scriptsTask
+var scriptsTaskBuild = function() {
+  var stream = scriptsTaskBase();
+  return stream
+    .pipe(gulp.dest(paths.buildDest))
+    .pipe(browserSync.stream())
+}
+
+gulp.task('js:serve', scriptsTaskServe);
+gulp.task('js:build', scriptsTaskBuild);
+module.exports = {
+  'js:serve':scriptsTaskServe,
+  'js:build':scriptsTaskBuild
+}
 

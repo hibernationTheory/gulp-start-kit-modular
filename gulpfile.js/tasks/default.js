@@ -2,7 +2,7 @@ var gulp            = require('gulp')
 var $               = require('gulp-load-plugins')();
 
 var defaultTask = function(cb) {
-  $.sequence('clean', 'css', 'js', 'html', 'watch', cb)
+  $.sequence('clean:serve', 'css:serve', 'js:serve', 'html:serve', 'watch', cb);
 }
 
 gulp.task('default', defaultTask)

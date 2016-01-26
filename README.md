@@ -6,6 +6,10 @@ A configurable, modular Gulp starter kit with common tasks. Comes with Browserif
 - [Google Web Starter Kit](https://github.com/google/web-starter-kit)
 - [Nunjucks Framework](https://github.com/travellingprog/nunjucks-framework)
 
+## How to use it?
+
+Running the command `gulp` will start the development task and will serve the app into a ./tmp folder. BrowserSync should start at this point, launching the app in your browser. Run `gulp build` to output the files for client delivery.
+
 ## Tasks
 
 ### BrowserSync

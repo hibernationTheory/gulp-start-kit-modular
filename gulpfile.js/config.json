@@ -1,14 +1,14 @@
 {
   "root": {
     "src": "./src",
-    "tempDest":"./.tmp",
+    "serveDest":"./tmp",
     "buildDest":"./build"
   },
 
   "tasks": {
     "browserSync": {
       "server": {
-        "baseDir": "build"
+        "baseDir": "tmp"
       }
     },
     "static": {

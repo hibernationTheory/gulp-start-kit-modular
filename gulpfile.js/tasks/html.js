@@ -9,12 +9,13 @@ var $            = require('gulp-load-plugins')();
 
 var paths = {
   src: path.join(config.root.src, config.tasks.html.nunjucks.pages, '/**/*.nunjucks'),
-  dest: config.root.buildDest,
+  buildDest: config.root.buildDest,
+  serveDest: config.root.serveDest,
   partials: path.join(config.root.src, config.tasks.html.nunjucks.partials),
   data: path.join(config.root.src, config.tasks.html.nunjucks.data, '/**/*.{js,json}'),
 }
 
-var htmlTask = function () {
+var htmlTaskBase = function() {
   $.nunjucksRender.nunjucks.configure([paths.partials], {watch: false});
   var dataObj = requireGlob.sync(paths.data);
 
@@ -31,9 +32,25 @@ var htmlTask = function () {
       path.extname = '.html';
       return path;
     }))
-    .pipe(gulp.dest(paths.dest))
+}
+
+var htmlTaskServe = function () {
+  var stream = htmlTaskBase();
+  return stream
+    .pipe(gulp.dest(paths.serveDest))
     .pipe(browserSync.stream())
 }
 
-gulp.task('html', htmlTask)
-module.exports = htmlTask
+var htmlTaskBuild = function () {
+  var stream = htmlTaskBase();
+  return stream
+    .pipe(gulp.dest(paths.buildDest))
+    .pipe(browserSync.stream())
+}
+
+gulp.task('html:serve', htmlTaskServe)
+gulp.task('html:build', htmlTaskBuild)
+module.exports = {
+  'html:serve':htmlTaskServe,
+  'html:build':htmlTaskBuild
+}
